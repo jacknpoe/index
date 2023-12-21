@@ -11,7 +11,6 @@ const endPoint = `menu.php`;
 fetch(endPoint)
 .then(res => res.json())
 .then(res => {
-    console.log(res);
     let composicao = "";
     res.forEach(el => {
         composicao += '<div class="item"><p><a href="';
