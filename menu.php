@@ -18,19 +18,13 @@
 	$conexao = new \mysqli( $hostname, $username, $password, $jacknpoe);
 
 	// Tenta conectar no banco, se retornar erro, morre
-	if ( $conexao->connect_errno)
-	{
-	    die( json_encode( "Falha ao conectar: (" . $conexao->connect_errno . ") " . $conexao->connect_error));
-	}
+	if ($conexao->connect_errno) { die( json_encode( "Falha ao conectar: (" . $conexao->connect_errno . ") " . $conexao->connect_error)); }
 
 	// faz a consulta dos itens de menu do banco
 	$consulta = $conexao->query( "SELECT NM_DESCRICAO, NM_LINK, NM_IMAGEM FROM menu ORDER BY CD_MENU");
 
 	// Checa se a query teve sucesso
-	if ( $conexao->errno)
-	{
-		die( json_encode( "Falha ao consultar: (" . $conexao->errno . ") " . $conexao->error));
-	}
+	if ($conexao->errno) { die( json_encode( "Falha ao consultar: (" . $conexao->errno . ") " . $conexao->error));	}
 
 	// inclui os itens dinâmicos do menu em $colunas
 	$colunas = $consulta->fetch_all(MYSQLI_ASSOC);
