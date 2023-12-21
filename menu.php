@@ -5,6 +5,7 @@
 	// Alterações:
 	// 0.1   10/12/2023 - primeira implementação
 	// 0.2   21/12/2023 - versão que usa JSON (no lugar de HTML)
+	// 0.3   21/12/2023 - versão usando fetch_all()
 
 	namespace jacknpoe;
 
@@ -32,19 +33,8 @@
 	}
 
 	// inclui os itens dinâmicos do menu em $colunas
-	$contador = 0;
-	$colunas = array();
-	while ( $coluna = $consulta->fetch_assoc()) {
-	     $colunas[$contador]["NM_DESCRICAO"] = $coluna[ "NM_DESCRICAO"];
-	     $colunas[$contador]["NM_LINK"] = $coluna[ "NM_LINK"];
-	     $colunas[$contador]["NM_IMAGEM"] = $coluna[ "NM_IMAGEM"];
-	     $contador = $contador + 1;
-	}
-
-	// inclui o Teste de PHP in-line, que sempre estará fixo no final
-	$colunas[$contador]["NM_DESCRICAO"] = "Teste de PHP in-line";
-	$colunas[$contador]["NM_LINK"] = "php_teste.php";
-	$colunas[$contador]["NM_IMAGEM"] = "php_teste.png";
-
+	$colunas = $consulta->fetch_all(MYSQLI_ASSOC);
+ 	// inclui o Teste de PHP in-line, que sempre estará fixo no final
+	array_push( $colunas, [ "NM_DESCRICAO" => "Teste de PHP in-line", "NM_LINK" => "php_teste.php", "NM_IMAGEM" => "php_teste.png"]);
 	echo json_encode( $colunas, JSON_UNESCAPED_UNICODE);
 ?>
