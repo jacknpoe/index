@@ -56,7 +56,7 @@ a:hover{
 @media (prefers-color-scheme: dark) { 
   body{
      color: #fff;
-     background-color: #111;
+     background-color: #222;
   }
 	a:link{
 		color: #fff;
@@ -64,7 +64,7 @@ a:hover{
 	a:visited{
 		color: #88f;
 	}
-  .item:hover{
+/*  .item:hover{
 		background-color: #111;
 	}*/
 }

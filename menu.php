@@ -4,12 +4,12 @@
 	// Objetivo: API de retorno de JSON com as informações da tabela menu em jacknpoe
 	// Alterações:
 	// 0.1   10/12/2023 - primeira implementação
+	// 0.2   21/12/2023 - versão que usa JSON (no lugar de HTML)
 
 	namespace jacknpoe;
 
 	require_once( 'configuracoes.php');
 	$cabecalho = "Content-Type: text/html; charset=" . CARACTERES;
-	// $cabecalho = "Content-Type: text/html; charset=" . UTF-8;
 	header( $cabecalho, true);
 	header('Content-Type: application/json');
 
@@ -22,6 +22,7 @@
 	    die( json_encode( "Falha ao conectar: (" . $conexao->connect_errno . ") " . $conexao->connect_error));
 	}
 
+	// faz a consulta dos itens de menu do banco
 	$consulta = $conexao->query( "SELECT NM_DESCRICAO, NM_LINK, NM_IMAGEM FROM menu ORDER BY CD_MENU");
 
 	// Checa se a query teve sucesso
@@ -30,49 +31,20 @@
 		die( json_encode( "Falha ao consultar: (" . $conexao->errno . ") " . $conexao->error));
 	}
 
-	$resultado = "";
-
-	// while ( $coluna = $consulta->fetch_assoc())
-	// {
-	// 	$resultado .= '<div class="item"><p><a href="';
-	// 	$resultado .= htmlspecialchars( $coluna[ "NM_LINK"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES);
-	// 	$resultado .= '"><img src="';
-	// 	$resultado .= htmlspecialchars( $coluna[ "NM_IMAGEM"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES);
-	// 	$resultado .= '"><br>';
-	// 	$resultado .= htmlspecialchars( $coluna[ "NM_DESCRICAO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES);
-	// 	$resultado .= '</a></p></div>';
-	// }
-
-	// $resultado .= '<div class="item"><p><a href="';
-	// $resultado .= htmlspecialchars( "php_teste.php", ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES);
-	// $resultado .= '"><img src="';
-	// $resultado .= htmlspecialchars( "php_teste.png", ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES);
-	// $resultado .= '"><br>';
-	// $resultado .= htmlspecialchars( "Teste de PHP in-line", ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES);
-	// $resultado .= '</a></p></div>';
-
-
-	while ( $coluna = $consulta->fetch_assoc())
-	{
-		$resultado .= '<div class="item"><p><a href="';
-		$resultado .= $coluna[ "NM_LINK"];
-		$resultado .= '"><img src="';
-		$resultado .= $coluna[ "NM_IMAGEM"];
-		$resultado .= '"><br>';
-		$resultado .= $coluna[ "NM_DESCRICAO"];
-		$resultado .= '</a></p></div>';
+	// inclui os itens dinâmicos do menu em $colunas
+	$contador = 0;
+	$colunas = array();
+	while ( $coluna = $consulta->fetch_assoc()) {
+	     $colunas[$contador]["NM_DESCRICAO"] = $coluna[ "NM_DESCRICAO"];
+	     $colunas[$contador]["NM_LINK"] = $coluna[ "NM_LINK"];
+	     $colunas[$contador]["NM_IMAGEM"] = $coluna[ "NM_IMAGEM"];
+	     $contador = $contador + 1;
 	}
 
-	$resultado .= '<div class="item"><p><a href="';
-	$resultado .= "php_teste.php";
-	$resultado .= '"><img src="';
-	$resultado .= "php_teste.png";
-	$resultado .= '"><br>';
-	$resultado .= "Teste de PHP in-line";
-	$resultado .= '</a></p></div>';
+	// inclui o Teste de PHP in-line, que sempre estará fixo no final
+	$colunas[$contador]["NM_DESCRICAO"] = "Teste de PHP in-line";
+	$colunas[$contador]["NM_LINK"] = "php_teste.php";
+	$colunas[$contador]["NM_IMAGEM"] = "php_teste.png";
 
-	echo( json_encode($resultado));
-
-	// $resultado = $consulta->fetch_array(MYSQLI_ASSOC);
-	// echo( json_encode( $resultado));
+	echo json_encode( $colunas, JSON_UNESCAPED_UNICODE);
 ?>
