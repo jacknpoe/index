@@ -1,6 +1,6 @@
 h1{
 	font-size: 60px;
-	font-family: Garamond, Times New Roman, Serif;	
+	font-family: Garamond, Times New Roman, Serif;
 	color: green;
  	font-weight: bold;
 	margin-left: 0 auto;
@@ -46,6 +46,34 @@ p{
 	border: 1px solid #888;
 	background-color: #ddd;
 }*/
+.filtragem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.campoFiltragem{
+    display: flex;
+		font-size: 18px;
+    font-family: Verdana, Arial, sans-serif;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 400px;
+ 		padding: 5px;
+		margin: 5px;
+}
+.labelFiltragem{
+ 		padding: 5px;
+		margin: 5px;
+}
+.inputFiltragem{
+ 		padding: 5px;
+		margin: 5px;
+		border-radius: 5px;
+    border: 3px solid #888 !important;
+    width: 100%;
+}
 a:link{
 	text-decoration: none;
 }
