@@ -23,6 +23,7 @@
 	// faz a consulta dos itens de menu do banco, se der um erro, morre
 	$consulta = $conexao->query( "SELECT NM_DESCRICAO, NM_LINK, NM_IMAGEM FROM menu ORDER BY CD_MENU");
 	if ($conexao->errno) { die( json_encode( "Falha ao consultar: (" . $conexao->errno . ") " . $conexao->error));	}
+	$conexao->close();
 
 	// inclui os itens dinâmicos do menu em $colunas
 	$colunas = $consulta->fetch_all(MYSQLI_ASSOC);
