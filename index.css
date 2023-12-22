@@ -84,7 +84,7 @@ a:hover{
 @media (prefers-color-scheme: dark) { 
   body{
      color: #fff;
-     background-color: #222;
+     background-color: #111;
   }
 	a:link{
 		color: #fff;
