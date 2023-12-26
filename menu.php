@@ -6,6 +6,7 @@
 	// 0.1   10/12/2023 - primeira implementação
 	// 0.2   21/12/2023 - versão que usa JSON (no lugar de HTML)
 	// 0.3   21/12/2023 - versão usando fetch_all()
+	// 0.4   26/12/2023 - versão que funciona com acentos no provedor
 
 	namespace jacknpoe;
 
