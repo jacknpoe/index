@@ -58,7 +58,7 @@ p{
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    box-sizing: border-box;
+/*    box-sizing: border-box;*/
     width: 300px;
  		padding: 5px;
 		margin: 5px;
@@ -72,7 +72,7 @@ p{
 		margin: 5px;
 		border-radius: 5px;
     border: 3px solid #888 !important;
-    width: 100%;
+	  width: 95%;
 }
 a:link{
 	text-decoration: none;
