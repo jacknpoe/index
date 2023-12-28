@@ -5,6 +5,7 @@
 // 0.1   10/12/2023 - primeira implementação
 // 0.2   21/12/2023 - versão que usa JSON (no lugar de HTML)
 // 0.3   22/12/2023 - versão com filtro
+// 0.4   28/12/2023 - filtro feito pelo contido no HTML das divs .item
 
 const grade = window.document.getElementById("grade");
 const fFiltro = window.document.getElementById("fFiltro");
@@ -15,24 +16,29 @@ const preencheGrade = () => {
     .then(res => res.json())
     .then(res => {
         let composicao = "";
-        const filtro = fFiltro.value.toUpperCase();
         res.forEach(el => {
-            if(el.NM_DESCRICAO.toUpperCase().includes(filtro)) {
-                composicao += '<div class="item"><p><a href="';
-                composicao += el.NM_LINK;
-                composicao += '"><img src="';
-                composicao += el.NM_IMAGEM;
-                composicao += '"><br>';
-                composicao += el.NM_DESCRICAO;
-                composicao += '</a></p></div>';
-            }
+            composicao += '<div class="item"><p><a href="';
+            composicao += el.NM_LINK;
+            composicao += '"><img src="';
+            composicao += el.NM_IMAGEM;
+            composicao += '"><br>';
+            composicao += el.NM_DESCRICAO;
+            composicao += '</a></p></div>';
         })    
-         grade.innerHTML = composicao;
+        grade.innerHTML = composicao;
     })
 }
 
 fFiltro.addEventListener("keyup", (evt) => {
-    preencheGrade();
+    const filtro = fFiltro.value.toUpperCase();
+    const items = [...window.document.getElementsByClassName("item")];
+    for(let i = 0; i < items.length; i++){
+        if(items[i].innerHTML.toUpperCase().includes(filtro)){
+            items[i].classList.remove("ocultaritem");  // mostrar
+        } else {
+            items[i].classList.add("ocultaritem");  // ocultar
+        }
+    }
 })
 
 preencheGrade();
