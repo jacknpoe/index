@@ -70,7 +70,7 @@ p{
 .inputFiltragem{
  		padding: 5px;
 		margin: 5px;
-		border-radius: 5px;
+		border-radius: 10px;
     border: 3px solid #888 !important;
 	  width: 90%;
 }
