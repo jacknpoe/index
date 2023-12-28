@@ -39,7 +39,7 @@ p{
 	min-height: 100px;
 	width: 360px;
 	display: inline-block;
-	vertical-align: center;
+	vertical-align: top;
 }
 .ocultaritem{
 	display: none !important;
