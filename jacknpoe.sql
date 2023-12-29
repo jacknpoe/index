@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: sql206.infinityfree.com
--- Tempo de geração: 26/12/2023 às 15:16
+-- Tempo de geração: 28/12/2023 às 19:18
 -- Versão do servidor: 10.4.17-MariaDB
 -- Versão do PHP: 7.2.22
 
@@ -46,7 +46,7 @@ INSERT INTO `menu` (`CD_MENU`, `NM_DESCRICAO`, `NM_LINK`, `NM_IMAGEM`) VALUES
 (4, 'Cálculo da diferença entre duas datas', 'php_calculadatas.php', 'php_calculadatas.png'),
 (5, 'Cálculo da fórmula de Bhaskara', 'php_calculabhaskara.php', 'php_calculabhaskara.png'),
 (6, 'Teste de Validação de CPF', 'php_testecpf.php', 'php_testecpf.png'),
-(7, 'Calculadora de IMC (Índice de Massa Corpórea)', 'php_testeimc.php', 'php_testeimc.png'),
+(7, 'Teste de Calculadora de IMC (Índice de Massa Corpórea)', 'php_testeimc.php', 'php_testeimc.png'),
 (8, 'Sequência de Fibonacci', 'php_fibonacci.php', 'php_fibonacci.png'),
 (9, 'Teste de conversor de ASCII para binário e de binário para ASCII', 'php_testeconversorbinario.php', 'php_testeconversorbinario.png'),
 (10, 'Teste da classe academia: Consultar exercício', 'php_testeacademia.php', 'php_testeacademia.png'),
