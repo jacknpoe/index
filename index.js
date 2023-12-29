@@ -6,6 +6,7 @@
 // 0.2   21/12/2023 - versão que usa JSON (no lugar de HTML)
 // 0.3   22/12/2023 - versão com filtro
 // 0.4   28/12/2023 - filtro feito pelo contido no HTML das divs .item
+// 0.4.1 28/12/2023 - filtro feto pelo innerText, apenas da descrição
 
 const grade = window.document.getElementById("grade");
 const fFiltro = window.document.getElementById("fFiltro");
@@ -33,7 +34,7 @@ fFiltro.addEventListener("keyup", (evt) => {
     const filtro = fFiltro.value.toUpperCase();
     const items = [...window.document.getElementsByClassName("item")];
     for(let i = 0; i < items.length; i++){
-        if(items[i].innerHTML.toUpperCase().includes(filtro)){
+        if(items[i].children[0].children[0].innerText.toUpperCase().includes(filtro)){
             items[i].classList.remove("ocultaritem");  // mostrar
         } else {
             items[i].classList.add("ocultaritem");  // ocultar
