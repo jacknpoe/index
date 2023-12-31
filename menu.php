@@ -19,11 +19,11 @@
 	$conexao = new \mysqli($hostname, $username, $password, $jacknpoe);
 	if ($conexao->connect_errno) { die(json_encode("Falha ao conectar: (" . $conexao->connect_errno . ") " . $conexao->connect_error)); }
 
-	// coloca os resultados para serem UTF-8
+	// coloca os resultados para serem UTF-8, se retornar erro, morre
 	$consulta = $conexao->query("SET character_set_results = utf8");
 	if ($conexao->errno) { die(json_encode("Falha ao setar: (" . $conexao->errno . ") " . $conexao->error)); }
 
-	// faz a consulta dos itens de menu do banco, se der um erro, morre
+	// faz a consulta dos itens de menu do banco, se retornar erro, morre
 	$consulta = $conexao->query("SELECT NM_DESCRICAO, NM_LINK, NM_IMAGEM FROM menu ORDER BY CD_MENU");
 	if ($conexao->errno) { die(json_encode("Falha ao consultar: (" . $conexao->errno . ") " . $conexao->error)); }
 	$conexao->close();
