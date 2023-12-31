@@ -82,7 +82,11 @@ p{
 	  width: 90%;
 }
 a:link{
+	color: #000;
 	text-decoration: none;
+}
+a:visited{
+	color: #008;
 }
 a:hover{
 	text-decoration: underline;
@@ -92,8 +96,7 @@ a:hover{
   body{
 		color: #fff;
 		background-image: url("fundoescuro.jpg");
-}
-  }
+	}
 	a:link{
 		color: #fff;
 	}
