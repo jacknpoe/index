@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: sql206.infinityfree.com
--- Tempo de geração: 28/12/2023 às 19:18
--- Versão do servidor: 10.4.17-MariaDB
--- Versão do PHP: 7.2.22
+-- Host: 127.0.0.1
+-- Tempo de geração: 31-Dez-2023 às 23:21
+-- Versão do servidor: 10.4.28-MariaDB
+-- versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `epiz_33999511_jacknpoe`
+-- Banco de dados: `jacknpoe`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `menu`
+-- Estrutura da tabela `menu`
 --
 
 CREATE TABLE `menu` (
@@ -33,10 +32,10 @@ CREATE TABLE `menu` (
   `NM_DESCRICAO` varchar(255) NOT NULL,
   `NM_LINK` varchar(50) NOT NULL,
   `NM_IMAGEM` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `menu`
+-- Extraindo dados da tabela `menu`
 --
 
 INSERT INTO `menu` (`CD_MENU`, `NM_DESCRICAO`, `NM_LINK`, `NM_IMAGEM`) VALUES
@@ -57,27 +56,28 @@ INSERT INTO `menu` (`CD_MENU`, `NM_DESCRICAO`, `NM_LINK`, `NM_IMAGEM`) VALUES
 (15, 'Analisador de Números (em JavaScript)', 'js_analisavalores.html', 'js_analisavalores.png'),
 (16, 'Exercício de Calculadora (em JavaScript)', 'aula70.html', 'aula70.png'),
 (17, 'Exercício de Bolas (em JavaScript)', 'aula82.html', 'aula82.png'),
-(18, 'Teste de Calculadora entre juros e acréscimo (em JavaScript)', 'js_testejuros.html', 'js_testejuros.png');
+(18, 'Teste de Calculadora entre juros e acréscimo (em JavaScript)', 'js_testejuros.html', 'js_testejuros.png'),
+(19, 'Cálculo da fórmula de Bhaskara (com API)', 'api_calculabhaskara.html', 'api_calculabhaskara.png');
 
 --
--- Índices de tabelas apagadas
+-- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `menu`
+-- Índices para tabela `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`CD_MENU`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `CD_MENU` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `CD_MENU` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
