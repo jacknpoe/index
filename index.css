@@ -1,3 +1,7 @@
+body{
+		color: #000;
+		background-image: url("fundoclaro.jpg");
+}
 h1{
 	font-size: 60px;
 	font-family: Garamond, Times New Roman, Serif;
@@ -86,8 +90,9 @@ a:hover{
 /* modo escuro */
 @media (prefers-color-scheme: dark) { 
   body{
-     color: #fff;
-     background-color: #111;
+		color: #fff;
+		background-image: url("fundoescuro.jpg");
+}
   }
 	a:link{
 		color: #fff;
