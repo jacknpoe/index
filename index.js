@@ -18,14 +18,23 @@ const preencheGrade = () => {
     .then(res => {
         let composicao = "";
         res.forEach(el => {
-            composicao += '<div class="item"><p><a href="';
+            composicao += '<a href="';
             composicao += el.NM_LINK;
-            composicao += '"><img src="';
+            composicao += '"><div class="item"><img src="';
             composicao += el.NM_IMAGEM;
             composicao += '"><br>';
             composicao += el.NM_DESCRICAO;
-            composicao += '</a></p></div>';
-        })    
+            composicao += '</div></a>';
+
+            // Guarda a forma antiga, se precisar voltar a ter link já acessado
+            // composicao += '<div class="item"><p><a href="';
+            // composicao += el.NM_LINK;
+            // composicao += '"><img src="';
+            // composicao += el.NM_IMAGEM;
+            // composicao += '"><br>';
+            // composicao += el.NM_DESCRICAO;
+            // composicao += '</a></p></div>';
+        })
         grade.innerHTML = composicao;
     })
 }
