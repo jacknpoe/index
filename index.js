@@ -9,6 +9,7 @@
 // 0.4.1 28/12/2023 - filtro feto pelo innerText, apenas da descrição
 // 0.5   02/01/2024 - agora monta um div inteiro como link
 // 0.5.1 02/01/2024 - corrigida a pesquisa pela descrição
+// 0.6   03/01/2024 - pega o campo NM_TECNOLOGIA
 
 const grade = window.document.getElementById("grade");
 const fFiltro = window.document.getElementById("fFiltro");
@@ -26,6 +27,7 @@ const preencheGrade = () => {
             composicao += el.NM_IMAGEM;
             composicao += '"></br>';
             composicao += el.NM_DESCRICAO;
+            composicao += " • " + el.NM_TECNOLOGIA;  // teste dia 03/01/2024
             composicao += '</div></a>';
 
             // Guarda a forma antiga, se precisar voltar a ter link já acessado

@@ -7,7 +7,7 @@
 	// 0.2   21/12/2023 - versão que usa JSON (no lugar de HTML)
 	// 0.3   21/12/2023 - versão usando fetch_all()
 	// 0.4   26/12/2023 - versão que funciona com acentos no provedor
-	// 0.4.1 03/01/2024 - alterada a descrição do Teste in line • PHP
+	// 0.4.1 03/01/2024 - retorna também NM_TECNOLOGIA
 
 	namespace jacknpoe;
 
@@ -25,13 +25,13 @@
 	if ($conexao->errno) { die(json_encode("Falha ao setar: (" . $conexao->errno . ") " . $conexao->error)); }
 
 	// faz a consulta dos itens de menu do banco, se retornar erro, morre
-	$consulta = $conexao->query("SELECT NM_DESCRICAO, NM_LINK, NM_IMAGEM FROM menu ORDER BY CD_MENU");
+	$consulta = $conexao->query("SELECT NM_DESCRICAO, NM_LINK, NM_IMAGEM, NM_TECNOLOGIA FROM menu ORDER BY CD_MENU");
 	if ($conexao->errno) { die(json_encode("Falha ao consultar: (" . $conexao->errno . ") " . $conexao->error)); }
 	$conexao->close();
 
 	// inclui os itens dinâmicos do menu em $colunas
 	$colunas = $consulta->fetch_all(MYSQLI_ASSOC);
  	// inclui o Teste de PHP in-line, que sempre estará fixo no final
-	array_push($colunas, ["NM_DESCRICAO" => "Teste in-line • PHP", "NM_LINK" => "php_teste.php", "NM_IMAGEM" => "php_teste.png"]);
+	array_push($colunas, ["NM_DESCRICAO" => "Teste in-line", "NM_LINK" => "php_teste.php", "NM_IMAGEM" => "php_teste.png", "NM_TECNOLOGIA" => "PHP"]);
 	echo json_encode($colunas, JSON_UNESCAPED_UNICODE);
 ?>
