@@ -8,6 +8,7 @@
 	// 0.3   21/12/2023 - versão usando fetch_all()
 	// 0.4   26/12/2023 - versão que funciona com acentos no provedor
 	// 0.4.1 03/01/2024 - retorna também NM_TECNOLOGIA
+	// 0.4.2 03/01/2024 - retorna NM_TECNOLOGIA da tabela tecnologia
 
 	namespace jacknpoe;
 
