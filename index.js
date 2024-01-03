@@ -22,7 +22,7 @@ const preencheGrade = () => {
             composicao += el.NM_LINK;
             composicao += '"><div class="item"><img src="';
             composicao += el.NM_IMAGEM;
-            composicao += '"><br>';
+            composicao += '"></br>';
             composicao += el.NM_DESCRICAO;
             composicao += '</div></a>';
 
@@ -31,7 +31,7 @@ const preencheGrade = () => {
             // composicao += el.NM_LINK;
             // composicao += '"><img src="';
             // composicao += el.NM_IMAGEM;
-            // composicao += '"><br>';
+            // composicao += '"></br>';
             // composicao += el.NM_DESCRICAO;
             // composicao += '</a></p></div>';
         })
@@ -43,7 +43,8 @@ fFiltro.addEventListener("keyup", (evt) => {
     const filtro = fFiltro.value.toUpperCase();
     const items = [...window.document.getElementsByClassName("item")];
     for(let i = 0; i < items.length; i++){
-        if(items[i].children[0].children[0].innerText.toUpperCase().includes(filtro)){
+//        if(items[i].children[0].children[0].innerText.toUpperCase().includes(filtro)){    // forma antiga
+        if(items[i].innerHTML.toUpperCase().includes(filtro)){
             items[i].classList.remove("ocultaritem");  // mostrar
         } else {
             items[i].classList.add("ocultaritem");  // ocultar
