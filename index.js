@@ -10,6 +10,7 @@
 // 0.5   02/01/2024 - agora monta um div inteiro como link
 // 0.5.1 02/01/2024 - corrigida a pesquisa pela descrição
 // 0.6   03/01/2024 - pega o campo NM_TECNOLOGIA
+// 0.6.1 03/01/2024 - colore NM_TECNOLOGIA e acrescenta "?v=2" nas imagens
 
 const grade = window.document.getElementById("grade");
 const fFiltro = window.document.getElementById("fFiltro");
@@ -25,7 +26,7 @@ const preencheGrade = () => {
             composicao += el.NM_LINK;
             composicao += '"><div class="item"><img src="';
             composicao += el.NM_IMAGEM;
-            composicao += '"></br>';
+            composicao += '?v=2"></br>';
             composicao += el.NM_DESCRICAO;
             composicao += ' <span class="tecnologia">' + el.NM_TECNOLOGIA + "</span>" ;  // teste dia 03/01/2024
             composicao += '</div></a>';
