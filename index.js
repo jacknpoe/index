@@ -7,6 +7,8 @@
 // 0.3   22/12/2023 - versão com filtro
 // 0.4   28/12/2023 - filtro feito pelo contido no HTML das divs .item
 // 0.4.1 28/12/2023 - filtro feto pelo innerText, apenas da descrição
+// 0.5   02/01/2024 - agora monta um div inteiro como link
+// 0.5.1 02/01/2024 - corrigida a pesquisa pela descrição
 
 const grade = window.document.getElementById("grade");
 const fFiltro = window.document.getElementById("fFiltro");
