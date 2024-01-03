@@ -93,6 +93,7 @@ a:hover{
 	text-decoration: underline;
 }
 .tecnologia{
+	white-space: nowrap !important;
 	color: #fff !important;
 	background-color: green;
 	padding: 2px 4px !important;
