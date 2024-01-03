@@ -44,7 +44,7 @@ fFiltro.addEventListener("keyup", (evt) => {
     const items = [...window.document.getElementsByClassName("item")];
     for(let i = 0; i < items.length; i++){
 //        if(items[i].children[0].children[0].innerText.toUpperCase().includes(filtro)){    // forma antiga
-        if(items[i].innerHTML.toUpperCase().includes(filtro)){
+        if(items[i].innerText.toUpperCase().includes(filtro)){
             items[i].classList.remove("ocultaritem");  // mostrar
         } else {
             items[i].classList.add("ocultaritem");  // ocultar
