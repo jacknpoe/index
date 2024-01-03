@@ -25,7 +25,7 @@
 	if ($conexao->errno) { die(json_encode("Falha ao setar: (" . $conexao->errno . ") " . $conexao->error)); }
 
 	// faz a consulta dos itens de menu do banco, se retornar erro, morre
-	$consulta = $conexao->query("SELECT NM_DESCRICAO, NM_LINK, NM_IMAGEM, NM_TECNOLOGIA FROM menu ORDER BY CD_MENU");
+	$consulta = $conexao->query("SELECT NM_DESCRICAO, NM_LINK, NM_IMAGEM, NM_TECNOLOGIA FROM menu INNER JOIN tecnologia ON menu.CD_TECNOLOGIA = tecnologia.CD_TECNOLOGIA ORDER BY CD_MENU");
 	if ($conexao->errno) { die(json_encode("Falha ao consultar: (" . $conexao->errno . ") " . $conexao->error)); }
 	$conexao->close();
 
