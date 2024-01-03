@@ -27,7 +27,7 @@ const preencheGrade = () => {
             composicao += el.NM_IMAGEM;
             composicao += '"></br>';
             composicao += el.NM_DESCRICAO;
-            composicao += " • " + el.NM_TECNOLOGIA;  // teste dia 03/01/2024
+            composicao += ' <span class="tecnologia">' + el.NM_TECNOLOGIA + "</span>" ;  // teste dia 03/01/2024
             composicao += '</div></a>';
 
             // Guarda a forma antiga, se precisar voltar a ter link já acessado
