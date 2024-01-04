@@ -45,6 +45,7 @@ p{
 	display: inline-block;
 	border: 1px solid #0000;
 	vertical-align: top;
+	line-height: 140% !important;
 }
 .ocultaritem{
 	display: none !important;
