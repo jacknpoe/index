@@ -1,6 +1,6 @@
 body{
 		color: #000;
-		background-image: url("fundoclaro.jpg");
+/*		background-image: url("fundoclaro.jpg");*/
 		font-family: Verdana, Arial, sans-serif;	
 }
 h1{
@@ -104,7 +104,7 @@ a:hover{
 @media (prefers-color-scheme: dark) { 
   body{
 		color: #fff;
-		background-image: url("fundoescuro.jpg");
+/*		background-image: url("fundoescuro.jpg");*/
 		background-color: #111;
 	}
 	a:link{
