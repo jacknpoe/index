@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: sql206.infinityfree.com
--- Tempo de geração: 03/01/2024 às 17:04
+-- Tempo de geração: 04/01/2024 às 14:37
 -- Versão do servidor: 10.4.17-MariaDB
 -- Versão do PHP: 7.2.22
 
@@ -50,8 +50,8 @@ INSERT INTO `menu` (`CD_MENU`, `NM_DESCRICAO`, `NM_LINK`, `NM_IMAGEM`, `CD_TECNO
 (7, 'Calculadora de IMC (Índice de Massa Corpórea)', 'php_testeimc.php', 'php_testeimc.png', 1),
 (8, 'Sequência de Fibonacci', 'php_fibonacci.php', 'php_fibonacci.png', 1),
 (9, 'Conversor de ASCII para binário e de binário para ASCII', 'php_testeconversorbinario.php', 'php_testeconversorbinario.png', 1),
-(10, 'Classe academia: Consultar exercício', 'php_testeacademia.php', 'php_testeacademia.png', 1),
-(11, 'Classe academia 2: Incluir aluno', 'php_testeacademia2.php', 'php_testeacademia2.png', 1),
+(10, 'Classe academia: Consultar exercício', 'php_testeacademia.php', 'php_testeacademia.png', 4),
+(11, 'Classe academia 2: Incluir aluno', 'php_testeacademia2.php', 'php_testeacademia2.png', 4),
 (12, 'Gerador de senhas', 'php_testegerasenha.php', 'php_testegerasenha.png', 1),
 (13, 'Retira aspas simples contra code injection (MariaDB e mySQL)', 'php_retiraaspas.php', 'php_retiraaspas.png', 1),
 (14, 'Cálculo da fórmula de Bhaskara', 'js_calculabhaskara.html', 'js_calculabhaskara.png', 2),
@@ -79,7 +79,8 @@ CREATE TABLE `tecnologia` (
 INSERT INTO `tecnologia` (`CD_TECNOLOGIA`, `NM_TECNOLOGIA`) VALUES
 (1, 'PHP'),
 (2, 'JavaScript'),
-(3, 'API em PHP + JavaScript');
+(3, 'API em PHP + JavaScript'),
+(4, 'PHP + MySQL');
 
 --
 -- Índices de tabelas apagadas
@@ -112,7 +113,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT de tabela `tecnologia`
 --
 ALTER TABLE `tecnologia`
-  MODIFY `CD_TECNOLOGIA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `CD_TECNOLOGIA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
