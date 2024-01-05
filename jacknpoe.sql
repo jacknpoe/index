@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: sql206.infinityfree.com
--- Tempo de geração: 04/01/2024 às 14:37
+-- Tempo de geração: 04/01/2024 às 19:38
 -- Versão do servidor: 10.4.17-MariaDB
 -- Versão do PHP: 7.2.22
 
@@ -53,7 +53,7 @@ INSERT INTO `menu` (`CD_MENU`, `NM_DESCRICAO`, `NM_LINK`, `NM_IMAGEM`, `CD_TECNO
 (10, 'Classe academia: Consultar exercício', 'php_testeacademia.php', 'php_testeacademia.png', 4),
 (11, 'Classe academia 2: Incluir aluno', 'php_testeacademia2.php', 'php_testeacademia2.png', 4),
 (12, 'Gerador de senhas', 'php_testegerasenha.php', 'php_testegerasenha.png', 1),
-(13, 'Retira aspas simples contra code injection (MariaDB e mySQL)', 'php_retiraaspas.php', 'php_retiraaspas.png', 1),
+(13, 'Retira aspas simples contra code injection (MariaDB e MySQL)', 'php_retiraaspas.php', 'php_retiraaspas.png', 1),
 (14, 'Cálculo da fórmula de Bhaskara', 'js_calculabhaskara.html', 'js_calculabhaskara.png', 2),
 (15, 'Analisador de números • JavaScript', 'js_analisavalores.html', 'js_analisavalores.png', 2),
 (16, 'Exercício de calculadora', 'aula70.html', 'aula70.png', 2),
