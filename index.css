@@ -100,8 +100,13 @@ a:hover{
 	padding: 2px 4px !important;
 	border-radius: 4px !important;
 }
+.botao{
+	padding: 6px;
+	border-radius: 5px;
+	min-width: 100px;
+}
 /* modo escuro */
-@media (prefers-color-scheme: dark) { 
+@media (prefers-color-scheme: dark){
   body{
 		color: #fff;
 /*		background-image: url("fundoescuro.jpg");*/
@@ -115,5 +120,5 @@ a:hover{
 	}
   .item:hover{
 		background-color: #222;
-	}	
+	}
 }

@@ -14,6 +14,7 @@
 
 const grade = window.document.getElementById("grade");
 const fFiltro = window.document.getElementById("fFiltro");
+const btnCarregar = window.document.getElementById("btnCarregar");
 
 const preencheGrade = () => {
     const endPoint = `menu.php`;
@@ -55,6 +56,10 @@ fFiltro.addEventListener("keyup", (evt) => {
             items[i].classList.add("ocultaritem");  // ocultar
         }
     }
+})
+
+btnCarregar.addEventListener("click", (evt) => {
+    preencheGrade();
 })
 
 preencheGrade();

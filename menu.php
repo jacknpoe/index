@@ -3,11 +3,11 @@
 	// AUTOR: Ricardo Erick Rebêlo
 	// Objetivo: API de retorno de JSON com as informações da tabela menu em jacknpoe
 	// Alterações:
-	// 0.1   10/12/2023 - primeira implementação
-	// 0.2   21/12/2023 - versão que usa JSON (no lugar de HTML)
-	// 0.3   21/12/2023 - versão usando fetch_all()
-	// 0.4   26/12/2023 - versão que funciona com acentos no provedor
-	// 0.4.1 03/01/2024 - retorna também NM_TECNOLOGIA
+	// 0.1   10/12/2023 - primeira implementação, retornando HTML
+	// 0.2   21/12/2023 - versão que retorna JSON
+	// 0.3   21/12/2023 - versão usando fetch_all() no lugar de iterar um array
+	// 0.4   26/12/2023 - versão que funciona com acentos no provedor usando query com SET
+	// 0.4.1 03/01/2024 - retorna também NM_TECNOLOGIA (da tabela menu)
 	// 0.4.2 03/01/2024 - retorna NM_TECNOLOGIA da tabela tecnologia
 
 	namespace jacknpoe;
