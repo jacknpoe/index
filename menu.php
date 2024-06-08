@@ -17,7 +17,11 @@
 	header('Content-Type: application/json');
 
 	// Tenta conectar no banco, se retornar erro, morre
-	require_once('connect.php');
+	$hostname = "localhost";
+	$database = "ficha";
+	$jacknpoe = "jacknpoe";
+	$username = "root";
+	$password = "";
 	$conexao = new \mysqli($hostname, $username, $password, $jacknpoe);
 	if ($conexao->connect_errno) { die(json_encode("Falha ao conectar: (" . $conexao->connect_errno . ") " . $conexao->connect_error)); }
 
