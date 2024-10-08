@@ -58,8 +58,8 @@ fFiltro.addEventListener("keyup", (evt) => {
     }
 })
 
-btnCarregar.addEventListener("click", (evt) => {
-    preencheGrade();
-})
+// btnCarregar.addEventListener("click", (evt) => {
+//    preencheGrade();
+// })
 
 preencheGrade();
