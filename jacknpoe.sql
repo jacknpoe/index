@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: sql206.infinityfree.com
--- Tempo de geração: 04/01/2024 às 19:38
--- Versão do servidor: 10.4.17-MariaDB
--- Versão do PHP: 7.2.22
+-- Host: 127.0.0.1
+-- Tempo de geração: 18/12/2024 às 22:21
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `epiz_33999511_jacknpoe`
+-- Banco de dados: `jacknpoe`
 --
 
 -- --------------------------------------------------------
@@ -34,7 +33,7 @@ CREATE TABLE `menu` (
   `NM_LINK` varchar(50) NOT NULL,
   `NM_IMAGEM` varchar(50) NOT NULL,
   `CD_TECNOLOGIA` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `menu`
@@ -55,7 +54,7 @@ INSERT INTO `menu` (`CD_MENU`, `NM_DESCRICAO`, `NM_LINK`, `NM_IMAGEM`, `CD_TECNO
 (12, 'Gerador de senhas', 'php_testegerasenha.php', 'php_testegerasenha.png', 1),
 (13, 'Retira aspas simples contra code injection (MariaDB e MySQL)', 'php_retiraaspas.php', 'php_retiraaspas.png', 1),
 (14, 'Cálculo da fórmula de Bhaskara', 'js_calculabhaskara.html', 'js_calculabhaskara.png', 2),
-(15, 'Analisador de números • JavaScript', 'js_analisavalores.html', 'js_analisavalores.png', 2),
+(15, 'Analisador de números', 'js_analisavalores.html', 'js_analisavalores.png', 2),
 (16, 'Exercício de calculadora', 'aula70.html', 'aula70.png', 2),
 (17, 'Exercício de bolas', 'aula82.html', 'aula82.png', 2),
 (18, 'Calculadora entre juros e acréscimo', 'js_testejuros.html', 'js_testejuros.png', 2),
@@ -69,7 +68,7 @@ INSERT INTO `menu` (`CD_MENU`, `NM_DESCRICAO`, `NM_LINK`, `NM_IMAGEM`, `CD_TECNO
 
 CREATE TABLE `tecnologia` (
   `CD_TECNOLOGIA` int(11) NOT NULL,
-  `NM_TECNOLOGIA` varchar(50) CHARACTER SET utf8mb4 NOT NULL
+  `NM_TECNOLOGIA` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -83,7 +82,7 @@ INSERT INTO `tecnologia` (`CD_TECNOLOGIA`, `NM_TECNOLOGIA`) VALUES
 (4, 'PHP + MySQL');
 
 --
--- Índices de tabelas apagadas
+-- Índices para tabelas despejadas
 --
 
 --
@@ -100,7 +99,7 @@ ALTER TABLE `tecnologia`
   ADD PRIMARY KEY (`CD_TECNOLOGIA`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
