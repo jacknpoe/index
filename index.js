@@ -11,38 +11,61 @@
 // 0.5.1 02/01/2024 - corrigida a pesquisa pela descrição
 // 0.6   03/01/2024 - pega o campo NM_TECNOLOGIA
 // 0.6.1 03/01/2024 - colore NM_TECNOLOGIA e acrescenta "?v=2" nas imagens
+// 0.7   21/12/2024 - os links agora veem de link.php
 
 const grade = window.document.getElementById("grade");
+const links = window.document.getElementById("links");
 const fFiltro = window.document.getElementById("fFiltro");
 const btnCarregar = window.document.getElementById("btnCarregar");
 
 const preencheGrade = () => {
-    const endPoint = `menu.php`;
-    fetch(endPoint)
+    // grade de menu
+    const endPointMenu = 'menu.php';
+    fetch(endPointMenu)
     .then(res => res.json())
     .then(res => {
-        let composicao = "";
+        let composicaoGrade = "";
         res.forEach(el => {
-            composicao += '<a href="';
-            composicao += el.NM_LINK;
-            composicao += '"><div class="item"><img src="';
-            composicao += el.NM_IMAGEM;
-            composicao += '?v=2"></br>';
-            composicao += el.NM_DESCRICAO;
-            composicao += ' <span class="tecnologia">' + el.NM_TECNOLOGIA + "</span>" ;  // teste dia 03/01/2024
-            composicao += '</div></a>';
+            composicaoGrade += '<a href="';
+            composicaoGrade += el.NM_LINK;
+            composicaoGrade += '"><div class="item"><img src="';
+            composicaoGrade += el.NM_IMAGEM;
+            composicaoGrade += '?v=2"></br>';
+            composicaoGrade += el.NM_DESCRICAO;
+            composicaoGrade += ' <span class="tecnologia">' + el.NM_TECNOLOGIA + "</span>" ;  // teste dia 03/01/2024
+            composicaoGrade += '</div></a>';
 
             // Guarda a forma antiga, se precisar voltar a ter link já acessado
-            // composicao += '<div class="item"><p><a href="';
-            // composicao += el.NM_LINK;
-            // composicao += '"><img src="';
-            // composicao += el.NM_IMAGEM;
-            // composicao += '"></br>';
-            // composicao += el.NM_DESCRICAO;
-            // composicao += '</a></p></div>';
+            // composicaoGrade += '<div class="item"><p><a href="';
+            // composicaoGrade += el.NM_LINK;
+            // composicaoGrade += '"><img src="';
+            // composicaoGrade += el.NM_IMAGEM;
+            // composicaoGrade += '"></br>';
+            // composicaoGrade += el.NM_DESCRICAO;
+            // composicaoGrade += '</a></p></div>';
         })
-        grade.innerHTML = composicao;
+        grade.innerHTML = composicaoGrade;
     })
+
+    // grade de menu
+    const endPointLinks = 'links.php';
+    fetch(endPointLinks)
+    .then(res => res.json())
+    .then(res => {
+        let composicaoLinks = "";
+        res.forEach(el => {
+            if ( composicaoLinks != "" ) {
+                composicaoLinks += " | ";
+            }
+            composicaoLinks += '<a href=';
+            composicaoLinks += el.NM_LINK;
+            composicaoLinks += '>';
+            composicaoLinks += el.NM_DESCRICAO;
+            composicaoLinks += '</a>';
+        })
+        links.innerHTML = composicaoLinks;
+    })
+
 }
 
 fFiltro.addEventListener("keyup", (evt) => {

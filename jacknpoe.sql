@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18/12/2024 às 22:21
+-- Tempo de geração: 21/12/2024 às 16:15
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `jacknpoe`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `link`
+--
+
+CREATE TABLE `link` (
+  `CD_LINK` int(19) NOT NULL,
+  `NM_DESCRICAO` varchar(50) NOT NULL,
+  `NM_LINK` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `link`
+--
+
+INSERT INTO `link` (`CD_LINK`, `NM_DESCRICAO`, `NM_LINK`) VALUES
+(1, 'Dropbox', 'https://www.dropbox.com/sh/sd34beecmknys2n/AADGrcLbtz4ul5hQXmsnUlhka?dl=0'),
+(2, 'LinkedIn', 'https://www.linkedin.com/in/ricardo-erick-reb%C3%AAlo-97416035/'),
+(3, 'GitHub', 'https://github.com/jacknpoe'),
+(4, 'Pastebin', 'https://pastebin.com/u/jacknpoe'),
+(5, 'WordPress', 'https://jacknpoeexplicaprogramacao.wordpress.com/'),
+(6, 'Currículo', 'curriculo.pdf');
 
 -- --------------------------------------------------------
 
@@ -86,6 +110,12 @@ INSERT INTO `tecnologia` (`CD_TECNOLOGIA`, `NM_TECNOLOGIA`) VALUES
 --
 
 --
+-- Índices de tabela `link`
+--
+ALTER TABLE `link`
+  ADD PRIMARY KEY (`CD_LINK`);
+
+--
 -- Índices de tabela `menu`
 --
 ALTER TABLE `menu`
@@ -101,6 +131,12 @@ ALTER TABLE `tecnologia`
 --
 -- AUTO_INCREMENT para tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `link`
+--
+ALTER TABLE `link`
+  MODIFY `CD_LINK` int(19) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `menu`
