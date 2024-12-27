@@ -1,27 +1,32 @@
-body{
+body {
 		color: #000;
 /*		background-image: url("fundoclaro.jpg");*/
 		font-family: Verdana, Arial, sans-serif;	
 }
-h1{
-	font-size: 60px;
-	font-family: Garamond, Times New Roman, Serif;
+@font-face {
+	font-family: "Bebas Neue";
+	src: url('BebasNeue-Regular.ttf') format('truetype');
+}
+h1 {
+	font-size: 72px;
+	font-family: "Bebas Neue";
+	/* font-family: Garamond, Times New Roman, Serif; */
 	color: green;
  	font-weight: bold;
-	margin-left: 0 auto;
-	margin-right: 0 auto;
+ 	padding: 20px 0px 0px 0px;
+ 	margin: 0px;
 	text-align: center;
 	align-items: center;
 	flex-direction: row;
 	justify-content: center;
 }
-h2{
+h2 {
 	font-size: 14px;
 	color: green;
-	padding: 20;
-	margin: 20;
+	padding: 5px;
+	margin: 0px;
 }
-p{
+p {
 	font-size: 16px;
 	color: green;	
 	margin: 0 auto;
@@ -29,7 +34,7 @@ p{
 	border: 0px white;
 	padding: 5px 0;
 }
-.todo{
+.todo {
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
@@ -37,7 +42,7 @@ p{
 	flex-direction: row;
 	justify-content: center;
 }
-.item{
+.item {
 /*	height: 145px;
 	min-height: 145px;*/
 	padding: 15px 5px;
@@ -47,20 +52,20 @@ p{
 	vertical-align: top;
 	line-height: 140% !important;
 }
-.ocultaritem{
+.ocultaritem {
 	display: none !important;
 }
-.item:hover{
+.item:hover {
 	border-radius: 10px;
 	border: 1px solid #888;
 	background-color: #ddd;
 }
-.filtragem{
+.filtragem {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.campoFiltragem{
+.campoFiltragem {
     display: flex;
 		font-size: 18px;
     font-family: Verdana, Arial, sans-serif;
@@ -69,38 +74,38 @@ p{
     flex-direction: column;
 /*    box-sizing: border-box;*/
     width: 300px;
+ 	padding: 0px;
+	margin: 5px;
+}
+.labelFiltragem {
  		padding: 5px;
 		margin: 5px;
 }
-.labelFiltragem{
- 		padding: 5px;
-		margin: 5px;
-}
-.inputFiltragem{
+.inputFiltragem {
  		padding: 5px;
 		margin: 5px;
 		border-radius: 10px;
     border: 3px solid #888 !important;
 	  width: 90%;
 }
-a:link{
+a:link {
 	color: #000;
 	text-decoration: none;
 }
-a:visited{
+a:visited {
 	color: #008;
 }
-a:hover{
+a:hover {
 	text-decoration: underline;
 }
-.tecnologia{
+.tecnologia {
 	white-space: nowrap !important;
 	color: #fff !important;
 	background-color: green;
 	padding: 2px 4px !important;
 	border-radius: 4px !important;
 }
-.botao{
+.botao {
 	padding: 6px;
 	border-radius: 5px;
 	min-width: 100px;
@@ -108,18 +113,18 @@ a:hover{
 }
 /* modo escuro */
 @media (prefers-color-scheme: dark){
-  body{
+	body {
 		color: #fff;
 /*		background-image: url("fundoescuro.jpg");*/
 		background-color: #111;
 	}
-	a:link{
+	a:link {
 		color: #fff;
 	}
-	a:visited{
+	a:visited {
 		color: #88f;
 	}
-  .item:hover{
+ 	.item:hover {
 		background-color: #222;
 	}
 }
